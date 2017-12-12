@@ -11,6 +11,7 @@ set( LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib )
 find_package(catkin REQUIRED COMPONENTS roscpp cv_bridge 
 rospy std_msgs sensor_msgs image_transport tf camera_info_manager geometry_msgs
 )
+include_directories(${catkin_INCLUDE_DIRS})
 #opencv
 find_package(OpenCV)
 include_directories( ${OpenCV_INCLUDE_DIRS} )
