@@ -1,7 +1,7 @@
 
 #include <Eigen/Core>
 #include <Eigen/Geometry>
-
+#include <ros/ros.h>
 
 // for Sophus
 //#include <sophus/se3.h>
@@ -23,3 +23,4 @@
 #include <unordered_map>
 #include <map>
 
+using namespace cv;

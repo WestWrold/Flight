@@ -1,6 +1,6 @@
 #include<flight/ImgPro.h>
 
-bool checkHorizontalInvariance(Mat& leftImage, Mat& rightImage, int pxX, int pxY )
+bool imgPro::checkHorizontalInvariance(Mat& leftImage, Mat& rightImage, Mat& sobelL, Mat& sobelR, int pxX, int pxY)
 {
     int startX = pxX;
     int startY = pxY;
@@ -55,7 +55,7 @@ bool checkHorizontalInvariance(Mat& leftImage, Mat& rightImage, int pxX, int pxY
         return false;
 }
 
-int imgPro::getSAD(Mat leftImage, Mat rightImage, Mat laplacianL, Mat laplacianR, int pxX, int pxY)
+int imgPro::getSAD(Mat& leftImage, Mat& rightImage, Mat& laplacianL, Mat& laplacianR, int pxX, int pxY)
 {
     int startX=pxX;
     int startY=pxY;
@@ -90,3 +90,60 @@ int imgPro::getSAD(Mat leftImage, Mat rightImage, Mat laplacianL, Mat laplacianR
     return 333*(float)sad/(float)laplacian_value;
 }
 
+void imgPro::getImgRight(const sensor_msg::ImageConstPtr& msg)
+{
+    
+    
+        // Copy the ros image message to cv::Mat. Convert to grayscale if it is a color image.
+        cv_bridge::CvImageConstPtr cv_ptr;
+        try
+        {
+            cv_ptr = cv_bridge::toCvShare(msg);
+        }
+        catch (cv_bridge::Exception& e)
+        {
+            ROS_ERROR("cv_bridge exception: %s", e.what());
+            return;
+        }
+    
+        ROS_ASSERT(cv_ptr->image.channels()==3 || cv_ptr->image.channels()==1);
+    
+        if(cv_ptr->image.channels()==3)
+        {
+           
+            cvtColor(cv_ptr->image, img, CV_RGB2GRAY);
+         
+        }
+        else if(cv_ptr->image.channels()==1)
+        {
+            cv_ptr->image.copyTo(img);
+        }
+}
+void imgPro::getImgLeft(const sensor_msg::ImageConstPtr& msg)
+{
+    
+    
+        // Copy the ros image message to cv::Mat. Convert to grayscale if it is a color image.
+        cv_bridge::CvImageConstPtr cv_ptr;
+        try
+        {
+            cv_ptr = cv_bridge::toCvShare(msg);
+        }
+        catch (cv_bridge::Exception& e)
+        {
+            ROS_ERROR("cv_bridge exception: %s", e.what());
+            return;
+        }
+    
+        ROS_ASSERT(cv_ptr->image.channels()==3 || cv_ptr->image.channels()==1);
+    
+        if(cv_ptr->image.channels()==3)
+        {
+            
+            cvtColor(cv_ptr->image, img, CV_RGB2GRAY);
+        }
+        else if(cv_ptr->image.channels()==1)
+        {
+            cv_ptr->image.copyTo(img);
+        }
+}
