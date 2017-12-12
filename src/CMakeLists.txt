@@ -3,4 +3,4 @@ add_library(libFlight SHARED
     Frame.cpp 
     ImgPro.cpp 
     StereoMap.cpp)
-target_link_libraries( libFlight ${THIRD_LIBS})
+target_link_libraries( libFlight ${THIRD_LIBS} ${catkin_LIBRARIES})

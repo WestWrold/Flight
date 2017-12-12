@@ -1,5 +1,9 @@
 #include<flight/ImgPro.h>
 
+void imgPro::imgProInit()
+{
+    
+}
 bool imgPro::checkHorizontalInvariance(Mat& leftImage, Mat& rightImage, Mat& sobelL, Mat& sobelR, int pxX, int pxY)
 {
     int startX = pxX;
@@ -90,7 +94,7 @@ int imgPro::getSAD(Mat& leftImage, Mat& rightImage, Mat& laplacianL, Mat& laplac
     return 333*(float)sad/(float)laplacian_value;
 }
 
-void imgPro::getImgRight(const sensor_msg::ImageConstPtr& msg)
+void imgPro::getImgRight(const sensor_msgs::ImageConstPtr& msg)
 {
     
     
@@ -119,7 +123,7 @@ void imgPro::getImgRight(const sensor_msg::ImageConstPtr& msg)
             cv_ptr->image.copyTo(img);
         }
 }
-void imgPro::getImgLeft(const sensor_msg::ImageConstPtr& msg)
+void imgPro::getImgLeft(const sensor_msgs::ImageConstPtr& msg)
 {
     
     
