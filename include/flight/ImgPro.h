@@ -1,7 +1,10 @@
 #include<image_transport/image_transport.h>
 #include<cv_bridge/cv_bridge.h>
 #include<flight/common_include.h>
+#include<flight/Config.h>
 
+
+using namespace std;
 class imgPro
 {
 public:
@@ -11,10 +14,13 @@ public:
     cv::Mat img;
     int sadThreshold;
     int blockSize,INVARIANCE_CHECK_VERT_OFFSET_MIN,INVARIANCE_CHECK_VERT_OFFSET_MAX,horizontalInvarianceMultiplier;
+    
+
     void getImgRight(const sensor_msgs::ImageConstPtr& msg);
     void getImgLeft(const sensor_msgs::ImageConstPtr& msg);
     int  getSAD(Mat& leftImage, Mat& rightImage, Mat& laplacianL, Mat& laplacianR, int pxX, int pxY);
     bool checkHorizontalInvariance(Mat& leftImage, Mat& rightImage, Mat& sobelL, Mat& sobelR, int pxX, int pxY);
-    void imgProInit();
+    imgPro(string strSettingPath);
+    void Run();
     
 };

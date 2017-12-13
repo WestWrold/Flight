@@ -1,8 +1,38 @@
 #include<flight/ImgPro.h>
-
-void imgPro::imgProInit()
+imgPro::imgPro(string strSettingPath)
 {
+    myslam::Config::setParameterFile(strSettingPath);
+
+    blockSize = myslam::Config::get<int>("blockSize");
+    disparity = myslam::Config::get<int>("disparity");
+    INVARIANCE_CHECK_HORZ_OFFSET_MAX = myslam::Config::get<int>("INVARIANCE_CHECK_HORZ_OFFSET_MAX");
+    INVARIANCE_CHECK_HORZ_OFFSET_MIN = myslam::Config::get<int>("INVARIANCE_CHECK_HORZ_OFFSET_MIN");
+    INVARIANCE_CHECK_VERT_OFFSET_INCREMENT = myslam::Config::get<int>("INVARIANCE_CHECK_VERT_OFFSET_INCREMENT");
+    INVARIANCE_CHECK_VERT_OFFSET_MAX = myslam::Config::get<int>("INVARIANCE_CHECK_VERT_OFFSET_MAX");
+    INVARIANCE_CHECK_VERT_OFFSET_MIN = myslam::Config::get<int>("INVARIANCE_CHECK_VERT_OFFSET_MIN");
+    zero_disparity = myslam::Config::get<int>("zero_disparity");
+    sobelLimit = myslam::Config::get<int>("sobelLimit");
+    sadThreshold = myslam::Config::get<int>("sadThreshold");
+
+    cout <<"blockSize" <<blockSize <<endl;
+    cout <<"disparity" <<disparity <<endl;
+    cout <<"INVARIANCE_CHECK_HORZ_OFFSET_MAX" <<INVARIANCE_CHECK_HORZ_OFFSET_MAX <<endl;
+    cout <<"INVARIANCE_CHECK_HORZ_OFFSET_MIN" <<INVARIANCE_CHECK_HORZ_OFFSET_MIN <<endl;
+    cout <<"INVARIANCE_CHECK_VERT_OFFSET_INCREMENT" <<INVARIANCE_CHECK_VERT_OFFSET_INCREMENT <<endl;
+    cout <<"INVARIANCE_CHECK_VERT_OFFSET_MAX" <<INVARIANCE_CHECK_VERT_OFFSET_MAX <<endl;
+    cout <<"INVARIANCE_CHECK_VERT_OFFSET_MIN" <<INVARIANCE_CHECK_VERT_OFFSET_MIN <<endl;
+    cout <<"zero_disparity" <<zero_disparity <<endl;
+    cout <<"sobelLimit" <<sobelLimit <<endl;
+    cout <<"sadThreshold" <<sadThreshold <<endl;
+}
+void imgPro::Run()
+{
+    ros::NodeHandle nh;
+    image_transport::ImageTransport it(nh);
+    image_transport::Subscriber subLeftImg = it.subscribe("/zed/left/image_rect_color",1,&imgPro::getImgLeft,this);
+    image_transport::Subscriber subRightImg = it.subscribe("/zed/right/image_rect_color",1,&imgPro::getImgRight,this);
     
+    ros::spin();
 }
 bool imgPro::checkHorizontalInvariance(Mat& leftImage, Mat& rightImage, Mat& sobelL, Mat& sobelR, int pxX, int pxY)
 {
