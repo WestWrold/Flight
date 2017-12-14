@@ -26,13 +26,16 @@ imgPro::imgPro(string strSettingPath)
     cout <<"sadThreshold" <<sadThreshold <<endl;
 }
 void imgPro::Run()
-{
+{   
+ /*   flag = 4;
+    cout << flag <<endl;
     ros::NodeHandle nh;
     image_transport::ImageTransport it(nh);
     image_transport::Subscriber subLeftImg = it.subscribe("/zed/left/image_rect_color",1,&imgPro::getImgLeft,this);
     image_transport::Subscriber subRightImg = it.subscribe("/zed/right/image_rect_color",1,&imgPro::getImgRight,this);
-    
-    ros::spin();
+    flag = 3;
+    cout << flag <<endl;
+    ros::spinOnce();*/
 }
 bool imgPro::checkHorizontalInvariance(Mat& leftImage, Mat& rightImage, Mat& sobelL, Mat& sobelR, int pxX, int pxY)
 {
@@ -126,7 +129,8 @@ int imgPro::getSAD(Mat& leftImage, Mat& rightImage, Mat& laplacianL, Mat& laplac
 
 void imgPro::getImgRight(const sensor_msgs::ImageConstPtr& msg)
 {
-    
+    flag = 2;
+    cout << flag<<endl;
     
         // Copy the ros image message to cv::Mat. Convert to grayscale if it is a color image.
         cv_bridge::CvImageConstPtr cv_ptr;
@@ -145,17 +149,20 @@ void imgPro::getImgRight(const sensor_msgs::ImageConstPtr& msg)
         if(cv_ptr->image.channels()==3)
         {
            
-            cvtColor(cv_ptr->image, img, CV_RGB2GRAY);
+            cvtColor(cv_ptr->image, imgRight, CV_RGB2GRAY);
          
         }
         else if(cv_ptr->image.channels()==1)
         {
-            cv_ptr->image.copyTo(img);
+            cv_ptr->image.copyTo(imgRight);
         }
+       // imshow("image",imgRight);
+        
 }
 void imgPro::getImgLeft(const sensor_msgs::ImageConstPtr& msg)
 {
-    
+    flag = 1;    
+    cout << 1 <<endl;
     
         // Copy the ros image message to cv::Mat. Convert to grayscale if it is a color image.
         cv_bridge::CvImageConstPtr cv_ptr;
@@ -174,10 +181,10 @@ void imgPro::getImgLeft(const sensor_msgs::ImageConstPtr& msg)
         if(cv_ptr->image.channels()==3)
         {
             
-            cvtColor(cv_ptr->image, img, CV_RGB2GRAY);
+            cvtColor(cv_ptr->image, imgLeft, CV_RGB2GRAY);
         }
         else if(cv_ptr->image.channels()==1)
         {
-            cv_ptr->image.copyTo(img);
+            cv_ptr->image.copyTo(imgLeft);
         }
 }

@@ -11,7 +11,8 @@ public:
     //checkHorizontalInvariance
     int zero_disparity,sobelLimit,disparity;
     int INVARIANCE_CHECK_HORZ_OFFSET_MIN,INVARIANCE_CHECK_HORZ_OFFSET_MAX,INVARIANCE_CHECK_VERT_OFFSET_INCREMENT;
-    cv::Mat img;
+    cv::Mat imgLeft,imgRight;
+    int flag;
     int sadThreshold;
     int blockSize,INVARIANCE_CHECK_VERT_OFFSET_MIN,INVARIANCE_CHECK_VERT_OFFSET_MAX,horizontalInvarianceMultiplier;
     
