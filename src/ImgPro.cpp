@@ -24,6 +24,8 @@ imgPro::imgPro(string strSettingPath)
     cout <<"zero_disparity" <<zero_disparity <<endl;
     cout <<"sobelLimit" <<sobelLimit <<endl;
     cout <<"sadThreshold" <<sadThreshold <<endl;
+
+
 }
 void imgPro::Run()
 {   
@@ -157,6 +159,8 @@ void imgPro::getImgRight(const sensor_msgs::ImageConstPtr& msg)
             cv_ptr->image.copyTo(imgRight);
         }
        // imshow("image",imgRight);
+       image_pub_right.publish(cv_ptr->toImageMsg());
+       
         
 }
 void imgPro::getImgLeft(const sensor_msgs::ImageConstPtr& msg)
@@ -187,4 +191,6 @@ void imgPro::getImgLeft(const sensor_msgs::ImageConstPtr& msg)
         {
             cv_ptr->image.copyTo(imgLeft);
         }
+        image_pub_left.publish(cv_ptr->toImageMsg());
+        
 }

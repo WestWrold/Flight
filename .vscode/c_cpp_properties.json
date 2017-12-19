@@ -2,14 +2,11 @@
     "configurations": [
         {
             "name": "null",
-            "includePath": [
-                "${workspaceRoot}/include"
-            ],
+            "includePath": [],
             "defines": [],
             "browse": {
                 "path": [
-                    "${workspaceRoot}",
-                    "${workspaceRoot}/include"
+                    "${workspaceRoot}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""

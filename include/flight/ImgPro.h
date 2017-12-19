@@ -15,7 +15,7 @@ public:
     int flag;
     int sadThreshold;
     int blockSize,INVARIANCE_CHECK_VERT_OFFSET_MIN,INVARIANCE_CHECK_VERT_OFFSET_MAX,horizontalInvarianceMultiplier;
-    
+    image_transport::Publisher image_pub_left,image_pub_right;
 
     void getImgRight(const sensor_msgs::ImageConstPtr& msg);
     void getImgLeft(const sensor_msgs::ImageConstPtr& msg);

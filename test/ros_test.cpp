@@ -19,6 +19,8 @@ int main(int argc, char **argv)
     image_transport::ImageTransport it(nh);
     image_transport::Subscriber subLeftImg = it.subscribe("/zed/left/image_rect_color",1,&imgPro::getImgLeft,&imp);
     image_transport::Subscriber subRightImg = it.subscribe("/zed/right/image_rect_color",1,&imgPro::getImgRight,&imp);
+    imp.image_pub_right = it.advertise("/image_converter/right", 1);
+    imp.image_pub_left = it.advertise("/image_converter/left", 1);
     flag = 3;
     ros::Rate loop_rate(10);
    // imshow("image",imp.img);
