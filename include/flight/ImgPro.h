@@ -23,7 +23,10 @@ public:
     int  getSAD(Mat& leftImage, Mat& rightImage, Mat& laplacianL, Mat& laplacianR, int pxX, int pxY);
     bool checkHorizontalInvariance(Mat& leftImage, Mat& rightImage, Mat& sobelL, Mat& sobelR, int pxX, int pxY);
     imgPro(string strSettingPath);
-    vector<Point3f> hitPoints();
-    void LaplacianPro(cv::Mat& src_left,cv::Mat& src_right,cv::Mat& dst_left,cv::Mat& dst_right);
+    //vector<Point3f> hitPoints();
+    //void LaplacianPro(cv::Mat& src_left,cv::Mat& src_right,cv::Mat& dst_left,cv::Mat& dst_right);
     void LaplacianPro();
+    vector<Point3f> localHitPoints;
+    void HitPoints();
+    
 };

@@ -27,7 +27,7 @@ imgPro::imgPro(string strSettingPath)
 
 
 }
-vector<Point3f> imgPro::hitPoints()
+void imgPro::HitPoints()
 {   
 
     if(imgRight.cols > 0 && imgRight.rows > 0)
@@ -61,7 +61,6 @@ vector<Point3f> imgPro::hitPoints()
             }
         }
     }
-    return localHitPoints;
     }
     
 }

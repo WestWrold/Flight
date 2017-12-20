@@ -9,46 +9,44 @@ int main(int argc, char **argv)
    // myslam::Config::setParameterFile("default.yaml");
     int flag ;
     ros::init(argc,argv,"test_ros");
-    
+    ros::start();
     
     flag = 4;
     cout << flag <<endl;
     imgPro imp("default.yaml");
+    
     ros::NodeHandle nh;
     image_transport::ImageTransport it(nh);
     image_transport::Subscriber subLeftImg = it.subscribe("/zed/left/image_rect_color",1,&imgPro::getImgLeft,&imp);
     image_transport::Subscriber subRightImg = it.subscribe("/zed/right/image_rect_color",1,&imgPro::getImgRight,&imp);
-    imp.image_pub_right = it.advertise("/image_converter/right", 1);
-    imp.image_pub_left = it.advertise("/image_converter/left", 1);   
-    
-   // flag = 3;
+    flag = 3;
     ros::Rate loop_rate(10);
    // imshow("image",imp.img);
+    
+    image_transport::Publisher pub = it.advertise("show_result",1);
 
     
-    
-   vector<Point3f> hitpoints;
 
     int count  = 0;
     while (ros::ok())
-    {
-        hitpoints = imp.hitPoints();
+    {   
+        imp.HitPoints();
+        vector<Point3f> a = imp.localHitPoints;
         cout << count++ <<endl;
-        std_msgs::String msg;
-        std::stringstream ss;
-        ss << "hello wrold " <<count;
-        if(imp.imgLeft.cols >0 && imp.imgLeft.rows > 0)
-        {
-        // imshow("image",imp.imgLeft);
-        cout << "got you!" <<endl;
-        }
-        else{
-            cout << "img not right " <<endl; 
-            cout << imp.imgLeft.cols <<","<<imp.imgLeft.rows<<endl;
-        } 
-        ros::spinOnce();       
+       if(imp.imgLeft.cols >0 && imp.imgLeft.rows > 0)
+       {
+       // imshow("image",imp.imgLeft);
+       cout << "got you!" <<endl;
+       }
+       else{
+           cout << "img not right " <<endl; 
+           cout << imp.imgLeft.cols <<","<<imp.imgLeft.rows<<endl;
+       } 
+        ros::spinOnce();
+       
         loop_rate.sleep();
         //cout << imp.blockSize <<endl;
+        
         
     }
 
