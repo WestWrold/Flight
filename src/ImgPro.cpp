@@ -27,17 +27,43 @@ imgPro::imgPro(string strSettingPath)
 
 
 }
-void imgPro::Run()
+vector<Point3f> imgPro::hitPoints()
 {   
- /*   flag = 4;
-    cout << flag <<endl;
-    ros::NodeHandle nh;
-    image_transport::ImageTransport it(nh);
-    image_transport::Subscriber subLeftImg = it.subscribe("/zed/left/image_rect_color",1,&imgPro::getImgLeft,this);
-    image_transport::Subscriber subRightImg = it.subscribe("/zed/right/image_rect_color",1,&imgPro::getImgRight,this);
-    flag = 3;
-    cout << flag <<endl;
-    ros::spinOnce();*/
+
+    if(imgRight.cols > 0 && imgRight.rows > 0)
+    {
+    LaplacianPro();
+    int rows=imgRight.rows;
+    int cols=imgLeft.cols; 
+    vector<uchar> pointColors;
+    vector<Point3i> pointVector2d;
+    vector<Point3f> pointVector3d;
+    vector<Point3f> localHitPoints;
+    int hitCounter = 0;
+    int startJ=0;
+    int stopJ=cols-(disparity+blockSize);
+    LaplacianPro();
+    if(disparity<0){
+        startJ=-disparity;
+        stopJ=cols-blockSize;
+    }
+    for(int i=0;i<rows;i+=blockSize){
+    for(int j=startJ;j<stopJ;j+=blockSize){
+        int sad=getSAD(imgLeft,imgRight,laplacianLeft,laplacianRight,j,i);
+        if(sad<sadThreshold && sad>=0){
+            if(!check_horizontal_invariance || checkHorizontalInvariance(imgLeft,imgRight,laplacianLeft,laplacianRight,j,i)==false){
+            localHitPoints.push_back(Point3f(j+blockSize/2.0,i+blockSize/2.0,-disparity));
+            unsigned char pxL=imgLeft.at<unsigned char>(i,j);
+            pointColors.push_back(pxL);
+            hitCounter ++;
+            pointVector2d.push_back(Point3i(j,i,sad));
+                }
+            }
+        }
+    }
+    return localHitPoints;
+    }
+    
 }
 bool imgPro::checkHorizontalInvariance(Mat& leftImage, Mat& rightImage, Mat& sobelL, Mat& sobelR, int pxX, int pxY)
 {
@@ -105,7 +131,7 @@ int imgPro::getSAD(Mat& leftImage, Mat& rightImage, Mat& laplacianL, Mat& laplac
     int sad=0;
 
     for(int i=startY;i<=endY;i++){
-	unsigned char *this_rowL=leftImage.ptr<unsigned char>(i);
+	    unsigned char *this_rowL=leftImage.ptr<unsigned char>(i);
         unsigned char *this_rowR=rightImage.ptr<unsigned char>(i);
         unsigned char *this_row_laplacianL=laplacianL.ptr<unsigned char>(i);
         unsigned char *this_row_laplacianR=laplacianR.ptr<unsigned char>(i);
@@ -193,4 +219,11 @@ void imgPro::getImgLeft(const sensor_msgs::ImageConstPtr& msg)
         }
         image_pub_left.publish(cv_ptr->toImageMsg());
         
+}
+void imgPro::LaplacianPro()
+{
+    
+        cv::Laplacian(imgLeft,laplacianLeft,-1,3,1,0,BORDER_DEFAULT);
+        cv::Laplacian(imgRight,laplacianRight,-1,3,1,0,BORDER_DEFAULT);   
+    
 }
