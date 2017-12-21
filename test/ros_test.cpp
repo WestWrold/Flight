@@ -15,7 +15,7 @@ int main(int argc, char **argv)
     image_transport::ImageTransport it(nh);
     image_transport::Subscriber subLeftImg = it.subscribe("/zed/left/image_rect_color",1,&imgPro::getImgLeft,&imp);
     image_transport::Subscriber subRightImg = it.subscribe("/zed/right/image_rect_color",1,&imgPro::getImgRight,&imp);
-    framePro.imageResultleft = it.advertise("obstacle_points",1);
+    framePro.imageResultleft = it.advertise("obstacle_points",10);
     
     ros::Rate loop_rate(10);    
     //imp.image_pub_left = it.advertise("show_result",1);
@@ -31,15 +31,14 @@ int main(int argc, char **argv)
 
        if(imp.imgLeft.cols >0 && imp.imgLeft.rows > 0)
        {
-       // imshow("image",imp.imgLeft);
        cout << "got you!" <<endl;
        }
        else{
            cout << "img not right " <<endl; 
            cout << imp.imgLeft.cols <<","<<imp.imgLeft.rows<<endl;
        } 
+        
         ros::spinOnce();
-       
         loop_rate.sleep();
 
         

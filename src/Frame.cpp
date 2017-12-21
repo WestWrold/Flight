@@ -70,10 +70,11 @@ void Frame::visualizaFrame(cv::Mat& displayL, vector<Point3i> pointVector2d,int 
 	    rectangle(displayL,Point(x2+1,y2+1),Point(x2+blockSize-1,y2-1+blockSize),255);
         
         }
-        string a = "aaaaa";
         
-        cv::imshow("image window", displayL);
-    cv::waitKey(1);
-    imageResultleft.publish(imageToROSmsg(displayL,sensor_msgs::image_encodings::BGR8,a,ros::Time::now()));
-    }
+   // cv::imshow("image window", displayL);
+   // cv::waitKey(1);
+    //imageResultleft.publish(imageToROSmsg(displayL,sensor_msgs::image_encodings::BGR8,a,ros::Time::now()));
+    sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "mono8", displayL).toImageMsg();
+    imageResultleft.publish(msg);   
+}
 }
