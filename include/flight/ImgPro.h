@@ -12,7 +12,7 @@ public:
     int zero_disparity,sobelLimit,disparity;
     bool check_horizontal_invariance = true;
     int INVARIANCE_CHECK_HORZ_OFFSET_MIN,INVARIANCE_CHECK_HORZ_OFFSET_MAX,INVARIANCE_CHECK_VERT_OFFSET_INCREMENT;
-    cv::Mat imgLeft,imgRight,laplacianLeft,laplacianRight;
+    cv::Mat imgLeft,imgRight,laplacianLeft,laplacianRight,matQ;
     int flag;
     int sadThreshold;
     int blockSize,INVARIANCE_CHECK_VERT_OFFSET_MIN,INVARIANCE_CHECK_VERT_OFFSET_MAX,horizontalInvarianceMultiplier;
@@ -26,7 +26,6 @@ public:
     //vector<Point3f> hitPoints();
     //void LaplacianPro(cv::Mat& src_left,cv::Mat& src_right,cv::Mat& dst_left,cv::Mat& dst_right);
     void LaplacianPro();
-    vector<Point3f> localHitPoints;
-    void HitPoints();
+    void HitPoints(vector<Point3f>& localHitPoints, vector<Point3i>& pointVector2d);
     
 };

@@ -25,3 +25,4 @@
 #include <map>
 
 using namespace cv;
+using namespace std;

@@ -1,38 +1,34 @@
 #include<ros/ros.h>
 #include<std_msgs/String.h>
 #include<flight/ImgPro.h>
+#include<flight/Frame.h>
 //#include<flight/Config.h>
 using namespace std;
 
 int main(int argc, char **argv)
 {   
    // myslam::Config::setParameterFile("default.yaml");
-    int flag ;
     ros::init(argc,argv,"test_ros");
-    ros::start();
-    
-    flag = 4;
-    cout << flag <<endl;
     imgPro imp("default.yaml");
-    
+    Frame framePro(imp.matQ);
     ros::NodeHandle nh;
     image_transport::ImageTransport it(nh);
     image_transport::Subscriber subLeftImg = it.subscribe("/zed/left/image_rect_color",1,&imgPro::getImgLeft,&imp);
     image_transport::Subscriber subRightImg = it.subscribe("/zed/right/image_rect_color",1,&imgPro::getImgRight,&imp);
-    flag = 3;
-    ros::Rate loop_rate(10);
-   // imshow("image",imp.img);
+    framePro.imageResultleft = it.advertise("obstacle_points",1);
     
-    image_transport::Publisher pub = it.advertise("show_result",1);
-
+    ros::Rate loop_rate(10);    
+    //imp.image_pub_left = it.advertise("show_result",1);
+  //  imp.image_pub_right = it.advertise("show_result",1);
     
-
-    int count  = 0;
     while (ros::ok())
     {   
-        imp.HitPoints();
-        vector<Point3f> a = imp.localHitPoints;
-        cout << count++ <<endl;
+        vector<Point3f> hitPointsCamera;
+        vector<Point3i> hitPointsPixel;
+        imp.HitPoints(hitPointsCamera,hitPointsPixel);
+        framePro.visualizaFrame(imp.imgLeft,hitPointsPixel,imp.blockSize);
+
+
        if(imp.imgLeft.cols >0 && imp.imgLeft.rows > 0)
        {
        // imshow("image",imp.imgLeft);
@@ -45,7 +41,7 @@ int main(int argc, char **argv)
         ros::spinOnce();
        
         loop_rate.sleep();
-        //cout << imp.blockSize <<endl;
+
         
         
     }

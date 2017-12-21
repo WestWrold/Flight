@@ -14,20 +14,29 @@ imgPro::imgPro(string strSettingPath)
     sobelLimit = myslam::Config::get<int>("sobelLimit");
     sadThreshold = myslam::Config::get<int>("sadThreshold");
 
-    cout <<"blockSize" <<blockSize <<endl;
-    cout <<"disparity" <<disparity <<endl;
-    cout <<"INVARIANCE_CHECK_HORZ_OFFSET_MAX" <<INVARIANCE_CHECK_HORZ_OFFSET_MAX <<endl;
-    cout <<"INVARIANCE_CHECK_HORZ_OFFSET_MIN" <<INVARIANCE_CHECK_HORZ_OFFSET_MIN <<endl;
-    cout <<"INVARIANCE_CHECK_VERT_OFFSET_INCREMENT" <<INVARIANCE_CHECK_VERT_OFFSET_INCREMENT <<endl;
-    cout <<"INVARIANCE_CHECK_VERT_OFFSET_MAX" <<INVARIANCE_CHECK_VERT_OFFSET_MAX <<endl;
-    cout <<"INVARIANCE_CHECK_VERT_OFFSET_MIN" <<INVARIANCE_CHECK_VERT_OFFSET_MIN <<endl;
-    cout <<"zero_disparity" <<zero_disparity <<endl;
-    cout <<"sobelLimit" <<sobelLimit <<endl;
-    cout <<"sadThreshold" <<sadThreshold <<endl;
+    double matQ_03,matQ_13,matQ_23,matQ_32;
+    matQ_03 = myslam::Config::get<double>("matQ[0][3]");
+    matQ_13 = myslam::Config::get<double>("matQ[1][3]");
+    matQ_23 = myslam::Config::get<double>("matQ[2][3]");
+    matQ_32 = myslam::Config::get<double>("matQ[3][2]");
+
+    matQ=(Mat_<double>(4,4) <<1, 0, 0, matQ_03, 0, 1, 0, matQ_13, 0, 0, 0, matQ_23, 0, 0,matQ_32, 0);
+    
+    cout <<"matQ : " << matQ <<endl;
+    cout <<"blockSize : " <<blockSize <<endl;
+    cout <<"disparity : " <<disparity <<endl;
+    cout <<"INVARIANCE_CHECK_HORZ_OFFSET_MAX : " <<INVARIANCE_CHECK_HORZ_OFFSET_MAX <<endl;
+    cout <<"INVARIANCE_CHECK_HORZ_OFFSET_MIN : " <<INVARIANCE_CHECK_HORZ_OFFSET_MIN <<endl;
+    cout <<"INVARIANCE_CHECK_VERT_OFFSET_INCREMENT : " <<INVARIANCE_CHECK_VERT_OFFSET_INCREMENT <<endl;
+    cout <<"INVARIANCE_CHECK_VERT_OFFSET_MAX : " <<INVARIANCE_CHECK_VERT_OFFSET_MAX <<endl;
+    cout <<"INVARIANCE_CHECK_VERT_OFFSET_MIN : " <<INVARIANCE_CHECK_VERT_OFFSET_MIN <<endl;
+    cout <<"zero_disparity : " <<zero_disparity <<endl;
+    cout <<"sobelLimit　: " <<sobelLimit <<endl;
+    cout <<"sadThreshold　: " <<sadThreshold <<endl;
 
 
 }
-void imgPro::HitPoints()
+void imgPro::HitPoints(vector<Point3f>& localHitPoints, vector<Point3i>& pointVector2d)
 {   
 
     if(imgRight.cols > 0 && imgRight.rows > 0)
@@ -36,9 +45,6 @@ void imgPro::HitPoints()
     int rows=imgRight.rows;
     int cols=imgLeft.cols; 
     vector<uchar> pointColors;
-    vector<Point3i> pointVector2d;
-    vector<Point3f> pointVector3d;
-    vector<Point3f> localHitPoints;
     int hitCounter = 0;
     int startJ=0;
     int stopJ=cols-(disparity+blockSize);
@@ -184,7 +190,7 @@ void imgPro::getImgRight(const sensor_msgs::ImageConstPtr& msg)
             cv_ptr->image.copyTo(imgRight);
         }
        // imshow("image",imgRight);
-       image_pub_right.publish(cv_ptr->toImageMsg());
+     //  image_pub_right.publish(cv_ptr->toImageMsg());
        
         
 }
@@ -216,7 +222,7 @@ void imgPro::getImgLeft(const sensor_msgs::ImageConstPtr& msg)
         {
             cv_ptr->image.copyTo(imgLeft);
         }
-        image_pub_left.publish(cv_ptr->toImageMsg());
+      //  image_pub_left.publish(cv_ptr->toImageMsg());
         
 }
 void imgPro::LaplacianPro()
