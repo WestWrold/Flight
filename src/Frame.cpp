@@ -78,3 +78,31 @@ void Frame::visualizaFrame(cv::Mat& displayL, vector<Point3i> pointVector2d,int 
     imageResultleft.publish(msg);   
 }
 }
+
+void Frame::pixelToCamera(std::vector<Point3f> hitPointsPixel){
+    if(hitPointsPixel.size()>0){
+    perspectiveTransform(hitPointsPixel,hitPointsCamera,matQ);
+    }
+    else{
+        cout <<" pixelToCamera is Empty" << endl;
+    }
+}
+void Frame::cameraToWorld()
+{
+    if(hitPointsCamera.size()>0)
+    {
+    for(int i = 0; i< hitPointsCamera.size(); i++)
+        {
+        Eigen::Vector3d v(hitPointsCamera[i].x,hitPointsCamera[i].y,hitPointsCamera[i].z);
+        v = T.inverse()*v;
+        Point3f temp(v(2,0),v(0,0),v(1,0));
+        hitPointsWorld.push_back(temp);
+        
+        }
+    }
+    else {
+        cout << "pointsCamera is empty" <<endl;
+    }
+   // return T.inverse() *hitPointsCamera;
+
+}

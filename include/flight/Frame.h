@@ -8,6 +8,8 @@ class Frame
 public:
     cv::Mat matQ;
     Eigen::Isometry3d T ;
+    std::vector<Point3f> hitPointsCamera;
+    std::vector<Point3f> hitPointsWorld;
     bool flag_simoutanous;
     image_transport::Publisher imageResultleft;
 public:
@@ -15,6 +17,6 @@ public:
     void getOdom(const nav_msgs::Odometry& msg);
     sensor_msgs::ImagePtr imageToROSmsg(cv::Mat img, const std::string encodingType,std::string frameId, ros::Time t);
     void visualizaFrame(cv::Mat& displayL, vector<Point3i> pointVector2d,int blockSize);
-
-
+    void pixelToCamera(std::vector<Point3f> hitPointsPixel);
+    void cameraToWorld();
 };

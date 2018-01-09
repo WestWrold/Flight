@@ -44,11 +44,10 @@ void imgPro::HitPoints(vector<Point3f>& localHitPoints, vector<Point3i>& pointVe
     LaplacianPro();
     int rows=imgRight.rows;
     int cols=imgLeft.cols; 
-    vector<uchar> pointColors;
+   // vector<uchar> pointColors;
     int hitCounter = 0;
     int startJ=0;
     int stopJ=cols-(disparity+blockSize);
-    LaplacianPro();
     if(disparity<0){
         startJ=-disparity;
         stopJ=cols-blockSize;
@@ -60,7 +59,7 @@ void imgPro::HitPoints(vector<Point3f>& localHitPoints, vector<Point3i>& pointVe
             if(!check_horizontal_invariance || checkHorizontalInvariance(imgLeft,imgRight,laplacianLeft,laplacianRight,j,i)==false){
             localHitPoints.push_back(Point3f(j+blockSize/2.0,i+blockSize/2.0,-disparity));
             unsigned char pxL=imgLeft.at<unsigned char>(i,j);
-            pointColors.push_back(pxL);
+           // pointColors.push_back(pxL);
             hitCounter ++;
             pointVector2d.push_back(Point3i(j,i,sad));
                 }
