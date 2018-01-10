@@ -27,7 +27,7 @@ int main(int argc, char **argv)
         vector<Point3i> hitPointsPixel;
         imp.HitPoints(hitPointsCamera,hitPointsPixel);
         framePro.visualizaFrame(imp.imgLeft,hitPointsPixel,imp.blockSize);
-
+        
 
        if(imp.imgLeft.cols >0 && imp.imgLeft.rows > 0)
        {
