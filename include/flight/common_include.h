@@ -1,4 +1,3 @@
-
 #include <Eigen/Core>
 #include <Eigen/Geometry>
 #include <ros/ros.h>

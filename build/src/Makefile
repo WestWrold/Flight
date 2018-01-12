@@ -166,19 +166,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/libFlight.dir/rule:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/libFlight.dir/rule
-.PHONY : src/CMakeFiles/libFlight.dir/rule
+src/CMakeFiles/Flight.dir/rule:
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/Flight.dir/rule
+.PHONY : src/CMakeFiles/Flight.dir/rule
 
 # Convenience name for target.
-libFlight: src/CMakeFiles/libFlight.dir/rule
+Flight: src/CMakeFiles/Flight.dir/rule
 
-.PHONY : libFlight
+.PHONY : Flight
 
 # fast build rule for target.
-libFlight/fast:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/build
-.PHONY : libFlight/fast
+Flight/fast:
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/build
+.PHONY : Flight/fast
 
 Config.o: Config.cpp.o
 
@@ -186,7 +186,7 @@ Config.o: Config.cpp.o
 
 # target to build an object file
 Config.cpp.o:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/Config.cpp.o
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/Config.cpp.o
 .PHONY : Config.cpp.o
 
 Config.i: Config.cpp.i
@@ -195,7 +195,7 @@ Config.i: Config.cpp.i
 
 # target to preprocess a source file
 Config.cpp.i:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/Config.cpp.i
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/Config.cpp.i
 .PHONY : Config.cpp.i
 
 Config.s: Config.cpp.s
@@ -204,7 +204,7 @@ Config.s: Config.cpp.s
 
 # target to generate assembly for a file
 Config.cpp.s:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/Config.cpp.s
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/Config.cpp.s
 .PHONY : Config.cpp.s
 
 Frame.o: Frame.cpp.o
@@ -213,7 +213,7 @@ Frame.o: Frame.cpp.o
 
 # target to build an object file
 Frame.cpp.o:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/Frame.cpp.o
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/Frame.cpp.o
 .PHONY : Frame.cpp.o
 
 Frame.i: Frame.cpp.i
@@ -222,7 +222,7 @@ Frame.i: Frame.cpp.i
 
 # target to preprocess a source file
 Frame.cpp.i:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/Frame.cpp.i
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/Frame.cpp.i
 .PHONY : Frame.cpp.i
 
 Frame.s: Frame.cpp.s
@@ -231,7 +231,7 @@ Frame.s: Frame.cpp.s
 
 # target to generate assembly for a file
 Frame.cpp.s:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/Frame.cpp.s
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/Frame.cpp.s
 .PHONY : Frame.cpp.s
 
 ImgPro.o: ImgPro.cpp.o
@@ -240,7 +240,7 @@ ImgPro.o: ImgPro.cpp.o
 
 # target to build an object file
 ImgPro.cpp.o:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/ImgPro.cpp.o
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/ImgPro.cpp.o
 .PHONY : ImgPro.cpp.o
 
 ImgPro.i: ImgPro.cpp.i
@@ -249,7 +249,7 @@ ImgPro.i: ImgPro.cpp.i
 
 # target to preprocess a source file
 ImgPro.cpp.i:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/ImgPro.cpp.i
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/ImgPro.cpp.i
 .PHONY : ImgPro.cpp.i
 
 ImgPro.s: ImgPro.cpp.s
@@ -258,7 +258,7 @@ ImgPro.s: ImgPro.cpp.s
 
 # target to generate assembly for a file
 ImgPro.cpp.s:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/ImgPro.cpp.s
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/ImgPro.cpp.s
 .PHONY : ImgPro.cpp.s
 
 StereoMap.o: StereoMap.cpp.o
@@ -267,7 +267,7 @@ StereoMap.o: StereoMap.cpp.o
 
 # target to build an object file
 StereoMap.cpp.o:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/StereoMap.cpp.o
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/StereoMap.cpp.o
 .PHONY : StereoMap.cpp.o
 
 StereoMap.i: StereoMap.cpp.i
@@ -276,7 +276,7 @@ StereoMap.i: StereoMap.cpp.i
 
 # target to preprocess a source file
 StereoMap.cpp.i:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/StereoMap.cpp.i
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/StereoMap.cpp.i
 .PHONY : StereoMap.cpp.i
 
 StereoMap.s: StereoMap.cpp.s
@@ -285,7 +285,7 @@ StereoMap.s: StereoMap.cpp.s
 
 # target to generate assembly for a file
 StereoMap.cpp.s:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/StereoMap.cpp.s
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/StereoMap.cpp.s
 .PHONY : StereoMap.cpp.s
 
 trajplanner/Trajectory.o: trajplanner/Trajectory.cpp.o
@@ -294,7 +294,7 @@ trajplanner/Trajectory.o: trajplanner/Trajectory.cpp.o
 
 # target to build an object file
 trajplanner/Trajectory.cpp.o:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/trajplanner/Trajectory.cpp.o
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/trajplanner/Trajectory.cpp.o
 .PHONY : trajplanner/Trajectory.cpp.o
 
 trajplanner/Trajectory.i: trajplanner/Trajectory.cpp.i
@@ -303,7 +303,7 @@ trajplanner/Trajectory.i: trajplanner/Trajectory.cpp.i
 
 # target to preprocess a source file
 trajplanner/Trajectory.cpp.i:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/trajplanner/Trajectory.cpp.i
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/trajplanner/Trajectory.cpp.i
 .PHONY : trajplanner/Trajectory.cpp.i
 
 trajplanner/Trajectory.s: trajplanner/Trajectory.cpp.s
@@ -312,7 +312,7 @@ trajplanner/Trajectory.s: trajplanner/Trajectory.cpp.s
 
 # target to generate assembly for a file
 trajplanner/Trajectory.cpp.s:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/trajplanner/Trajectory.cpp.s
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/trajplanner/Trajectory.cpp.s
 .PHONY : trajplanner/Trajectory.cpp.s
 
 trajplanner/TrajectoryLibrary.o: trajplanner/TrajectoryLibrary.cpp.o
@@ -321,7 +321,7 @@ trajplanner/TrajectoryLibrary.o: trajplanner/TrajectoryLibrary.cpp.o
 
 # target to build an object file
 trajplanner/TrajectoryLibrary.cpp.o:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/trajplanner/TrajectoryLibrary.cpp.o
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/trajplanner/TrajectoryLibrary.cpp.o
 .PHONY : trajplanner/TrajectoryLibrary.cpp.o
 
 trajplanner/TrajectoryLibrary.i: trajplanner/TrajectoryLibrary.cpp.i
@@ -330,7 +330,7 @@ trajplanner/TrajectoryLibrary.i: trajplanner/TrajectoryLibrary.cpp.i
 
 # target to preprocess a source file
 trajplanner/TrajectoryLibrary.cpp.i:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/trajplanner/TrajectoryLibrary.cpp.i
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/trajplanner/TrajectoryLibrary.cpp.i
 .PHONY : trajplanner/TrajectoryLibrary.cpp.i
 
 trajplanner/TrajectoryLibrary.s: trajplanner/TrajectoryLibrary.cpp.s
@@ -339,7 +339,7 @@ trajplanner/TrajectoryLibrary.s: trajplanner/TrajectoryLibrary.cpp.s
 
 # target to generate assembly for a file
 trajplanner/TrajectoryLibrary.cpp.s:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/trajplanner/TrajectoryLibrary.cpp.s
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/trajplanner/TrajectoryLibrary.cpp.s
 .PHONY : trajplanner/TrajectoryLibrary.cpp.s
 
 trajplanner/csvparser.o: trajplanner/csvparser.c.o
@@ -348,7 +348,7 @@ trajplanner/csvparser.o: trajplanner/csvparser.c.o
 
 # target to build an object file
 trajplanner/csvparser.c.o:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/trajplanner/csvparser.c.o
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/trajplanner/csvparser.c.o
 .PHONY : trajplanner/csvparser.c.o
 
 trajplanner/csvparser.i: trajplanner/csvparser.c.i
@@ -357,7 +357,7 @@ trajplanner/csvparser.i: trajplanner/csvparser.c.i
 
 # target to preprocess a source file
 trajplanner/csvparser.c.i:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/trajplanner/csvparser.c.i
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/trajplanner/csvparser.c.i
 .PHONY : trajplanner/csvparser.c.i
 
 trajplanner/csvparser.s: trajplanner/csvparser.c.s
@@ -366,7 +366,7 @@ trajplanner/csvparser.s: trajplanner/csvparser.c.s
 
 # target to generate assembly for a file
 trajplanner/csvparser.c.s:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/trajplanner/csvparser.c.s
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/trajplanner/csvparser.c.s
 .PHONY : trajplanner/csvparser.c.s
 
 trajplanner/searchdistance.o: trajplanner/searchdistance.cpp.o
@@ -375,7 +375,7 @@ trajplanner/searchdistance.o: trajplanner/searchdistance.cpp.o
 
 # target to build an object file
 trajplanner/searchdistance.cpp.o:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/trajplanner/searchdistance.cpp.o
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/trajplanner/searchdistance.cpp.o
 .PHONY : trajplanner/searchdistance.cpp.o
 
 trajplanner/searchdistance.i: trajplanner/searchdistance.cpp.i
@@ -384,7 +384,7 @@ trajplanner/searchdistance.i: trajplanner/searchdistance.cpp.i
 
 # target to preprocess a source file
 trajplanner/searchdistance.cpp.i:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/trajplanner/searchdistance.cpp.i
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/trajplanner/searchdistance.cpp.i
 .PHONY : trajplanner/searchdistance.cpp.i
 
 trajplanner/searchdistance.s: trajplanner/searchdistance.cpp.s
@@ -393,7 +393,7 @@ trajplanner/searchdistance.s: trajplanner/searchdistance.cpp.s
 
 # target to generate assembly for a file
 trajplanner/searchdistance.cpp.s:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/trajplanner/searchdistance.cpp.s
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/trajplanner/searchdistance.cpp.s
 .PHONY : trajplanner/searchdistance.cpp.s
 
 trajplanner/uavtrans.o: trajplanner/uavtrans.cpp.o
@@ -402,7 +402,7 @@ trajplanner/uavtrans.o: trajplanner/uavtrans.cpp.o
 
 # target to build an object file
 trajplanner/uavtrans.cpp.o:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/trajplanner/uavtrans.cpp.o
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/trajplanner/uavtrans.cpp.o
 .PHONY : trajplanner/uavtrans.cpp.o
 
 trajplanner/uavtrans.i: trajplanner/uavtrans.cpp.i
@@ -411,7 +411,7 @@ trajplanner/uavtrans.i: trajplanner/uavtrans.cpp.i
 
 # target to preprocess a source file
 trajplanner/uavtrans.cpp.i:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/trajplanner/uavtrans.cpp.i
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/trajplanner/uavtrans.cpp.i
 .PHONY : trajplanner/uavtrans.cpp.i
 
 trajplanner/uavtrans.s: trajplanner/uavtrans.cpp.s
@@ -420,7 +420,7 @@ trajplanner/uavtrans.s: trajplanner/uavtrans.cpp.s
 
 # target to generate assembly for a file
 trajplanner/uavtrans.cpp.s:
-	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/trajplanner/uavtrans.cpp.s
+	cd /home/xxz/catkin_ws/src/auto_flight/build && $(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/trajplanner/uavtrans.cpp.s
 .PHONY : trajplanner/uavtrans.cpp.s
 
 # Help Target
@@ -433,7 +433,7 @@ help:
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... libFlight"
+	@echo "... Flight"
 	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... test"

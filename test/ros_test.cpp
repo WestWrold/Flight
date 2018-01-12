@@ -2,6 +2,7 @@
 #include<std_msgs/String.h>
 #include<flight/ImgPro.h>
 #include<flight/Frame.h>
+#include<flight/StereoMap.h>
 //#include<flight/Config.h>
 using namespace std;
 
@@ -11,10 +12,12 @@ int main(int argc, char **argv)
     ros::init(argc,argv,"test_ros");
     imgPro imp("default.yaml");
     Frame framePro(imp.matQ);
+    StereoMap map_world;
     ros::NodeHandle nh;
     image_transport::ImageTransport it(nh);
     image_transport::Subscriber subLeftImg = it.subscribe("/zed/left/image_rect_color",1,&imgPro::getImgLeft,&imp);
     image_transport::Subscriber subRightImg = it.subscribe("/zed/right/image_rect_color",1,&imgPro::getImgRight,&imp);
+    ros::Subscriber odom = nh.subscribe("/zed/odom",1,&Frame::getOdom,&framePro);
     framePro.imageResultleft = it.advertise("obstacle_points",10);
     
     ros::Rate loop_rate(10);    
@@ -27,6 +30,10 @@ int main(int argc, char **argv)
         vector<Point3i> hitPointsPixel;
         imp.HitPoints(hitPointsCamera,hitPointsPixel);
         framePro.visualizaFrame(imp.imgLeft,hitPointsPixel,imp.blockSize);
+        framePro.pixelToCamera(hitPointsPixel);
+        framePro.cameraToWorld();
+        map_world.InsertPointsIntoOctree(framePro.hitPointsWorld);
+        map_world.RemoveOldPoints(ros::Time::now());
         
 
        if(imp.imgLeft.cols >0 && imp.imgLeft.rows > 0)

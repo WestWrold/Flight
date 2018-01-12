@@ -40,9 +40,9 @@ sensor_msgs::ImagePtr Frame::imageToROSmsg(cv::Mat img, const std::string encodi
 
 void Frame::getOdom(const nav_msgs::Odometry& msg)
 {   
-    ROS_INFO_STREAM(setprecision(6)<< fixed << "position = ("<<msg.pose.pose.position.y*10<<","<<msg.pose.pose.position.z*10<<","<<msg.pose.pose.position.x*10);
+    ROS_INFO_STREAM(setprecision(6)<< fixed << "position = ("<<msg.pose.pose.position.y<<","<<msg.pose.pose.position.z<<","<<msg.pose.pose.position.x);
     ROS_INFO_STREAM(setprecision(6)<< fixed << "orientation = ("<<msg.pose.pose.orientation.x<<","<<msg.pose.pose.orientation.y<<","<<msg.pose.pose.orientation.z<<","<<msg.pose.pose.orientation.w);
-    // T = Eigen::Isometry3d::Identity();
+    T = Eigen::Isometry3d::Identity();
     
     //Eigen::Quaterniond q = Eigen::Quaterniond(-msg.pose.pose.orientation.y, msg.pose.pose.orientation.z, -msg.pose.pose.orientation.x, msg.pose.pose.orientation.w);
     Eigen::Quaterniond q = Eigen::Quaterniond(1, 0, 0, 0);
@@ -79,7 +79,7 @@ void Frame::visualizaFrame(cv::Mat& displayL, vector<Point3i> pointVector2d,int 
 }
 }
 
-void Frame::pixelToCamera(std::vector<Point3f> hitPointsPixel){
+void Frame::pixelToCamera(std::vector<Point3i> hitPointsPixel){
     if(hitPointsPixel.size()>0){
     perspectiveTransform(hitPointsPixel,hitPointsCamera,matQ);
     }

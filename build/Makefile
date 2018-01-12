@@ -1323,17 +1323,17 @@ gtest_main/fast:
 .PHONY : gtest_main/fast
 
 #=============================================================================
-# Target rules for targets named libFlight
+# Target rules for targets named Flight
 
 # Build rule for target.
-libFlight: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 libFlight
-.PHONY : libFlight
+Flight: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Flight
+.PHONY : Flight
 
 # fast build rule for target.
-libFlight/fast:
-	$(MAKE) -f src/CMakeFiles/libFlight.dir/build.make src/CMakeFiles/libFlight.dir/build
-.PHONY : libFlight/fast
+Flight/fast:
+	$(MAKE) -f src/CMakeFiles/Flight.dir/build.make src/CMakeFiles/Flight.dir/build
+.PHONY : Flight/fast
 
 #=============================================================================
 # Target rules for targets named trajplan_test
@@ -1489,7 +1489,7 @@ help:
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... gtest"
 	@echo "... gtest_main"
-	@echo "... libFlight"
+	@echo "... Flight"
 	@echo "... trajplan_test"
 	@echo "... setting_destination"
 	@echo "... ros_test"

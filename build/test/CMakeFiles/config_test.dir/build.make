@@ -90,7 +90,7 @@ config_test_EXTERNAL_OBJECTS =
 
 devel/lib/auto_flight/config_test: test/CMakeFiles/config_test.dir/config_test.cpp.o
 devel/lib/auto_flight/config_test: test/CMakeFiles/config_test.dir/build.make
-devel/lib/auto_flight/config_test: devel/lib/liblibFlight.so
+devel/lib/auto_flight/config_test: devel/lib/libFlight.so
 devel/lib/auto_flight/config_test: /opt/ros/kinetic/lib/libopencv_stitching3.so.3.3.1
 devel/lib/auto_flight/config_test: /opt/ros/kinetic/lib/libopencv_superres3.so.3.3.1
 devel/lib/auto_flight/config_test: /opt/ros/kinetic/lib/libopencv_videostab3.so.3.3.1

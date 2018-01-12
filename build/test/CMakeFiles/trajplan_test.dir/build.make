@@ -90,7 +90,7 @@ trajplan_test_EXTERNAL_OBJECTS =
 
 devel/lib/auto_flight/trajplan_test: test/CMakeFiles/trajplan_test.dir/trajplan_test.cpp.o
 devel/lib/auto_flight/trajplan_test: test/CMakeFiles/trajplan_test.dir/build.make
-devel/lib/auto_flight/trajplan_test: devel/lib/liblibFlight.so
+devel/lib/auto_flight/trajplan_test: devel/lib/libFlight.so
 devel/lib/auto_flight/trajplan_test: /opt/ros/kinetic/lib/libcv_bridge.so
 devel/lib/auto_flight/trajplan_test: /opt/ros/kinetic/lib/libopencv_core3.so.3.3.1
 devel/lib/auto_flight/trajplan_test: /opt/ros/kinetic/lib/libopencv_imgproc3.so.3.3.1

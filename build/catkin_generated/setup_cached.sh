@@ -8,5 +8,8 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/xxz/catkin_ws/src/auto_flight/build/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/xxz/catkin_ws/src/auto_flight/build/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/xxz/catkin_ws/src/auto_flight/build/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PYTHONPATH="/home/xxz/catkin_ws/src/auto_flight/build/devel/lib/python2.7/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/xxz/catkin_ws/src/auto_flight/build/devel/share/common-lisp"
 export ROS_PACKAGE_PATH="/home/xxz/catkin_ws/src/auto_flight:$ROS_PACKAGE_PATH"

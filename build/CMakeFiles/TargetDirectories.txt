@@ -105,7 +105,7 @@
 /home/xxz/catkin_ws/src/auto_flight/build/src/CMakeFiles/install.dir
 /home/xxz/catkin_ws/src/auto_flight/build/src/CMakeFiles/rebuild_cache.dir
 /home/xxz/catkin_ws/src/auto_flight/build/src/CMakeFiles/edit_cache.dir
-/home/xxz/catkin_ws/src/auto_flight/build/src/CMakeFiles/libFlight.dir
+/home/xxz/catkin_ws/src/auto_flight/build/src/CMakeFiles/Flight.dir
 /home/xxz/catkin_ws/src/auto_flight/build/src/CMakeFiles/install/strip.dir
 /home/xxz/catkin_ws/src/auto_flight/build/src/CMakeFiles/install/local.dir
 /home/xxz/catkin_ws/src/auto_flight/build/src/CMakeFiles/test.dir

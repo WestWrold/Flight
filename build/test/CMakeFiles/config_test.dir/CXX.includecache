@@ -7,8 +7,8 @@
 #IncludeRegexTransform: 
 
 ../include/flight/Config.h
-common_include.h
-../include/flight/common_include.h
+flight/common_include.h
+../include/flight/flight/common_include.h
 
 ../include/flight/common_include.h
 Eigen/Core
