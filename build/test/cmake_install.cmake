@@ -1,4 +1,4 @@
-# Install script for directory: /home/xxz/Flight/xxz_flight/src/Flight/test
+# Install script for directory: /home/xxz/catkin_ws/src/auto_flight/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

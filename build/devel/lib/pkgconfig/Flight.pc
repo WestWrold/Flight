@@ -1,8 +1,0 @@
-prefix=/home/xxz/Flight/xxz_flight/src/Flight/build/devel
-
-Name: Flight
-Description: Description of Flight
-Version: 0.0.0
-Cflags: -I/home/xxz/Flight/xxz_flight/src/Flight/build/devel/include
-Libs: -L/home/xxz/Flight/xxz_flight/src/Flight/build/devel/lib 
-Requires: 

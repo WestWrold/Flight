@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/config_test.dir/config_test.cpp.o"
-  "../devel/lib/Flight/config_test.pdb"
-  "../devel/lib/Flight/config_test"
+  "../devel/lib/auto_flight/config_test.pdb"
+  "../devel/lib/auto_flight/config_test"
 )
 
 # Per-language clean rules from dependency scanning.

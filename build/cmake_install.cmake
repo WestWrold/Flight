@@ -1,4 +1,4 @@
-# Install script for directory: /home/xxz/Flight/xxz_flight/src/Flight
+# Install script for directory: /home/xxz/catkin_ws/src/auto_flight
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -51,7 +51,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local" TYPE PROGRAM FILES "/home/xxz/Flight/xxz_flight/src/Flight/build/catkin_generated/installspace/_setup_util.py")
+file(INSTALL DESTINATION "/usr/local" TYPE PROGRAM FILES "/home/xxz/catkin_ws/src/auto_flight/build/catkin_generated/installspace/_setup_util.py")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
@@ -63,7 +63,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local" TYPE PROGRAM FILES "/home/xxz/Flight/xxz_flight/src/Flight/build/catkin_generated/installspace/env.sh")
+file(INSTALL DESTINATION "/usr/local" TYPE PROGRAM FILES "/home/xxz/catkin_ws/src/auto_flight/build/catkin_generated/installspace/env.sh")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
@@ -75,7 +75,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES "/home/xxz/Flight/xxz_flight/src/Flight/build/catkin_generated/installspace/setup.bash")
+file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES "/home/xxz/catkin_ws/src/auto_flight/build/catkin_generated/installspace/setup.bash")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
@@ -87,7 +87,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES "/home/xxz/Flight/xxz_flight/src/Flight/build/catkin_generated/installspace/setup.sh")
+file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES "/home/xxz/catkin_ws/src/auto_flight/build/catkin_generated/installspace/setup.sh")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
@@ -99,7 +99,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES "/home/xxz/Flight/xxz_flight/src/Flight/build/catkin_generated/installspace/setup.zsh")
+file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES "/home/xxz/catkin_ws/src/auto_flight/build/catkin_generated/installspace/setup.zsh")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
@@ -111,57 +111,65 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES "/home/xxz/Flight/xxz_flight/src/Flight/build/catkin_generated/installspace/.rosinstall")
+file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES "/home/xxz/catkin_ws/src/auto_flight/build/catkin_generated/installspace/.rosinstall")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/Flight/srv" TYPE FILE FILES "/home/xxz/Flight/xxz_flight/src/Flight/srv/destinate.srv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/auto_flight/srv" TYPE FILE FILES "/home/xxz/catkin_ws/src/auto_flight/srv/destinate.srv")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/Flight/cmake" TYPE FILE FILES "/home/xxz/Flight/xxz_flight/src/Flight/build/catkin_generated/installspace/Flight-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/auto_flight/cmake" TYPE FILE FILES "/home/xxz/catkin_ws/src/auto_flight/build/catkin_generated/installspace/auto_flight-msg-paths.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/xxz/Flight/xxz_flight/src/Flight/build/devel/include/Flight")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/xxz/catkin_ws/src/auto_flight/build/devel/include/auto_flight")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/xxz/Flight/xxz_flight/src/Flight/build/devel/share/common-lisp/ros/Flight")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/xxz/catkin_ws/src/auto_flight/build/devel/share/roseus/ros/auto_flight")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/xxz/Flight/xxz_flight/src/Flight/build/devel/lib/python2.7/dist-packages/Flight")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/xxz/catkin_ws/src/auto_flight/build/devel/share/common-lisp/ros/auto_flight")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/xxz/Flight/xxz_flight/src/Flight/build/devel/lib/python2.7/dist-packages/Flight")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/xxz/catkin_ws/src/auto_flight/build/devel/share/gennodejs/ros/auto_flight")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/xxz/Flight/xxz_flight/src/Flight/build/catkin_generated/installspace/Flight.pc")
+  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/xxz/catkin_ws/src/auto_flight/build/devel/lib/python2.7/dist-packages/auto_flight")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/Flight/cmake" TYPE FILE FILES "/home/xxz/Flight/xxz_flight/src/Flight/build/catkin_generated/installspace/Flight-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/xxz/catkin_ws/src/auto_flight/build/devel/lib/python2.7/dist-packages/auto_flight")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/Flight/cmake" TYPE FILE FILES
-    "/home/xxz/Flight/xxz_flight/src/Flight/build/catkin_generated/installspace/FlightConfig.cmake"
-    "/home/xxz/Flight/xxz_flight/src/Flight/build/catkin_generated/installspace/FlightConfig-version.cmake"
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/xxz/catkin_ws/src/auto_flight/build/catkin_generated/installspace/auto_flight.pc")
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/auto_flight/cmake" TYPE FILE FILES "/home/xxz/catkin_ws/src/auto_flight/build/catkin_generated/installspace/auto_flight-msg-extras.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/auto_flight/cmake" TYPE FILE FILES
+    "/home/xxz/catkin_ws/src/auto_flight/build/catkin_generated/installspace/auto_flightConfig.cmake"
+    "/home/xxz/catkin_ws/src/auto_flight/build/catkin_generated/installspace/auto_flightConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/Flight" TYPE FILE FILES "/home/xxz/Flight/xxz_flight/src/Flight/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/auto_flight" TYPE FILE FILES "/home/xxz/catkin_ws/src/auto_flight/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/xxz/Flight/xxz_flight/src/Flight/build/gtest/cmake_install.cmake")
-  include("/home/xxz/Flight/xxz_flight/src/Flight/build/src/cmake_install.cmake")
-  include("/home/xxz/Flight/xxz_flight/src/Flight/build/test/cmake_install.cmake")
+  include("/home/xxz/catkin_ws/src/auto_flight/build/gtest/cmake_install.cmake")
+  include("/home/xxz/catkin_ws/src/auto_flight/build/src/cmake_install.cmake")
+  include("/home/xxz/catkin_ws/src/auto_flight/build/test/cmake_install.cmake")
 
 endif()
 
@@ -173,5 +181,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/xxz/Flight/xxz_flight/src/Flight/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/xxz/catkin_ws/src/auto_flight/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

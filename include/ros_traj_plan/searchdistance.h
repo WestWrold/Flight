@@ -8,7 +8,7 @@
 #include <nav_msgs/Path.h>
 #include <ros/ros.h>
 
-#include "Flight/destinate.h"
+#include "auto_flight/destinate.h"
 #include "mavros_msgs/CommandBool.h"  //service message
 #include "mavros_msgs/SetMode.h"     //service message
 #include "mavros_msgs/State.h"         //topic message
@@ -46,7 +46,7 @@ class Uav_trajplannimg
 	void call_transmsg(const geometry_msgs::PoseStamped& msg);
 	void map_callback(const sensor_msgs::PointCloud2& map_msg);
 	void state_Callback(const mavros_msgs::State::ConstPtr& msg);
-	bool res_for_des(Flight::destinate::Request& req,Flight::destinate::Response& res);
+	bool res_for_des(auto_flight::destinate::Request& req,auto_flight::destinate::Response& res);
 
 	ros::NodeHandle n1;
 	ros::Publisher waypoint_pub;

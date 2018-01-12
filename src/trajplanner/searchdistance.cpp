@@ -72,7 +72,7 @@ void Uav_trajplannimg::call_transmsg(const geometry_msgs::PoseStamped& msg)
 }
 
 /**/
-bool Uav_trajplannimg::res_for_des(Flight::destinate::Request& req,Flight::destinate::Response& res)
+bool Uav_trajplannimg::res_for_des(auto_flight::destinate::Request& req,auto_flight::destinate::Response& res)
 {
 	ROS_INFO("get destination successfully");
 	get_des_=1;
@@ -154,7 +154,7 @@ void Uav_trajplannimg::fly_init()
 	   ros::spinOnce();
 	   des_coordinate_=des_coordinate;
    }
-   while (TrajLibrarymain.LoadLibrary("/home/xxz/Flight/xxz_flight/src/Flight/trajlib", 0)!=1)
+   while (TrajLibrarymain.LoadLibrary("/home/xxz/auto_flight/xxz_auto_flight/src/auto_flight/trajlib", 0)!=1)
    {
 	    ros::spinOnce();
    }
@@ -202,7 +202,7 @@ void Uav_trajplannimg::fly_init()
       //  (ros::Time::now()-last_request>ros::Duration(3.0));
         ROS_INFO_STREAM("The current state of mode is  "<<current_state.mode);  //打印mode状态
        // delay(2);
-	  if(set_mode_client.call(offb_set_mode)&&offb_set_mode.response.success)//发布offboard服务请求，并等待回复成功
+	  if(set_mode_client.call(offb_set_mode)&&offb_set_mode.response.mode_sent)//发布offboard服务请求，并等待回复成功
 	    ROS_INFO("Offboard enabled");
 
  	  last_request=ros::Time::now();//获取当前时间　　上面有一个作差，控制service-client 请求频率　３s/次

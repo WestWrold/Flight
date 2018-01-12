@@ -1,0 +1,8 @@
+prefix=/home/xxz/catkin_ws/src/auto_flight/build/devel
+
+Name: auto_flight
+Description: Description of auto_flight
+Version: 0.0.0
+Cflags: -I/home/xxz/catkin_ws/src/auto_flight/build/devel/include
+Libs: -L/home/xxz/catkin_ws/src/auto_flight/build/devel/lib 
+Requires: 

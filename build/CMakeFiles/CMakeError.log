@@ -1,23 +1,24 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/xxz/Flight/xxz_flight/src/Flight/build/CMakeFiles/CMakeTmp
+Change Dir: /home/xxz/catkin_ws/src/auto_flight/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec309649441/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec309649441.dir/build.make CMakeFiles/cmTryCompileExec309649441.dir/build
-make[1]: 正在进入目录 `/home/xxz/Flight/xxz_flight/src/Flight/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/xxz/Flight/xxz_flight/src/Flight/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec309649441.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTryCompileExec309649441.dir/CheckSymbolExists.c.o   -c /home/xxz/Flight/xxz_flight/src/Flight/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTryCompileExec309649441
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec309649441.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTryCompileExec309649441.dir/CheckSymbolExists.c.o  -o cmTryCompileExec309649441 -rdynamic 
-CMakeFiles/cmTryCompileExec309649441.dir/CheckSymbolExists.c.o：在函数‘main’中：
+Run Build Command:"/usr/bin/make" "cmTC_10373/fast"
+/usr/bin/make -f CMakeFiles/cmTC_10373.dir/build.make CMakeFiles/cmTC_10373.dir/build
+make[1]: Entering directory '/home/xxz/catkin_ws/src/auto_flight/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_10373.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_10373.dir/CheckSymbolExists.c.o   -c /home/xxz/catkin_ws/src/auto_flight/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_10373
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_10373.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_10373.dir/CheckSymbolExists.c.o  -o cmTC_10373 -rdynamic 
+CMakeFiles/cmTC_10373.dir/CheckSymbolExists.c.o：在函数‘main’中：
 CheckSymbolExists.c:(.text+0x16)：对‘pthread_create’未定义的引用
 collect2: error: ld returned 1 exit status
-make[1]: *** [cmTryCompileExec309649441] 错误 1
-make[1]:正在离开目录 `/home/xxz/Flight/xxz_flight/src/Flight/build/CMakeFiles/CMakeTmp'
-make: *** [cmTryCompileExec309649441/fast] 错误 2
+CMakeFiles/cmTC_10373.dir/build.make:97: recipe for target 'cmTC_10373' failed
+make[1]: *** [cmTC_10373] Error 1
+make[1]: Leaving directory '/home/xxz/catkin_ws/src/auto_flight/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_10373/fast' failed
+make: *** [cmTC_10373/fast] Error 2
 
-File /home/xxz/Flight/xxz_flight/src/Flight/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/xxz/catkin_ws/src/auto_flight/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -33,21 +34,22 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/xxz/Flight/xxz_flight/src/Flight/build/CMakeFiles/CMakeTmp
+Change Dir: /home/xxz/catkin_ws/src/auto_flight/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTryCompileExec2612833315/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2612833315.dir/build.make CMakeFiles/cmTryCompileExec2612833315.dir/build
-make[1]: 正在进入目录 `/home/xxz/Flight/xxz_flight/src/Flight/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/xxz/Flight/xxz_flight/src/Flight/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building C object CMakeFiles/cmTryCompileExec2612833315.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec2612833315.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.2/Modules/CheckFunctionExists.c
-Linking C executable cmTryCompileExec2612833315
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2612833315.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec2612833315.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2612833315 -rdynamic -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_079b9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_079b9.dir/build.make CMakeFiles/cmTC_079b9.dir/build
+make[1]: Entering directory '/home/xxz/catkin_ws/src/auto_flight/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_079b9.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_079b9.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_079b9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_079b9.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_079b9.dir/CheckFunctionExists.c.o  -o cmTC_079b9 -rdynamic -lpthreads 
 /usr/bin/ld: 找不到 -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: *** [cmTryCompileExec2612833315] 错误 1
-make[1]:正在离开目录 `/home/xxz/Flight/xxz_flight/src/Flight/build/CMakeFiles/CMakeTmp'
-make: *** [cmTryCompileExec2612833315/fast] 错误 2
+CMakeFiles/cmTC_079b9.dir/build.make:97: recipe for target 'cmTC_079b9' failed
+make[1]: *** [cmTC_079b9] Error 1
+make[1]: Leaving directory '/home/xxz/catkin_ws/src/auto_flight/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_079b9/fast' failed
+make: *** [cmTC_079b9/fast] Error 2
 
 

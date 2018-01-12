@@ -1,5 +1,5 @@
 #include<ros/ros.h>
-#include"Flight/destinate.h"
+#include"auto_flight/destinate.h"
 #include<stdlib.h>
 
 int main(int argc, char *argv[])
@@ -11,8 +11,8 @@ int main(int argc, char *argv[])
         return 1;
     }
     ros::NodeHandle nh4;
-    ros::ServiceClient des_client=nh4.serviceClient<Flight::destinate>("set_destination");
-    Flight::destinate des_srv;
+    ros::ServiceClient des_client=nh4.serviceClient<auto_flight::destinate>("set_destination");
+    auto_flight::destinate des_srv;
     des_srv.request.x=atoll(argv[1]);
     des_srv.request.y=atoll(argv[2]);
     des_srv.request.z=atoll(argv[3]);
