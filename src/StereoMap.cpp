@@ -1,5 +1,19 @@
 #include<flight/StereoMap.h>
 
+StereoMap::StereoMap()
+{
+    current_cloud_ = pcl::PointCloud<pcl::PointXYZ>::Ptr(new pcl::PointCloud<pcl::PointXYZ>());
+    building_cloud_ = pcl::PointCloud<pcl::PointXYZ>::Ptr(new pcl::PointCloud<pcl::PointXYZ>());
+
+
+    current_octree_ = new pcl::octree::OctreePointCloudSearch<pcl::PointXYZ>(OCTREE_RESOLUTION);
+    current_octree_->setInputCloud((pcl::PointCloud<pcl::PointXYZ>::Ptr)current_cloud_);
+
+    building_octree_ = new pcl::octree::OctreePointCloudSearch<pcl::PointXYZ>(OCTREE_RESOLUTION);
+    building_octree_->setInputCloud(building_cloud_);
+
+
+}
 void StereoMap::RemoveOldPoints(ros::Time ros_time){
     if(flag_firstStart == true) {
         current_octree_timestamp_ = ros_time;

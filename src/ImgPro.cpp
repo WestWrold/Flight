@@ -1,4 +1,7 @@
-#include<flight/ImgPro.h>
+#include"flight/ImgPro.h"
+//
+    //read Parameter from parameterfile
+//
 imgPro::imgPro(string strSettingPath)
 {
     myslam::Config::setParameterFile(strSettingPath);
