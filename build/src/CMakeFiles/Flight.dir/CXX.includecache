@@ -208,7 +208,7 @@ flight/Frame.h
 
 /home/xxz/catkin_ws/src/auto_flight/src/ImgPro.cpp
 flight/ImgPro.h
--
+/home/xxz/catkin_ws/src/auto_flight/src/flight/ImgPro.h
 
 /home/xxz/catkin_ws/src/auto_flight/src/StereoMap.cpp
 flight/StereoMap.h

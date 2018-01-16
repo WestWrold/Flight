@@ -79,13 +79,15 @@ void Frame::visualizaFrame(cv::Mat& displayL, vector<Point3i> pointVector2d,int 
 }
 }
 
-void Frame::pixelToCamera(std::vector<Point3i> hitPointsPixel){
+void Frame::pixelToCamera(std::vector<Point3f> hitPointsPixel)
+{
     if(hitPointsPixel.size()>0){
     perspectiveTransform(hitPointsPixel,hitPointsCamera,matQ);
     }
     else{
         cout <<" pixelToCamera is Empty" << endl;
     }
+
 }
 void Frame::cameraToWorld()
 {
@@ -97,7 +99,6 @@ void Frame::cameraToWorld()
         v = T.inverse()*v;
         Point3f temp(v(2,0),v(0,0),v(1,0));
         hitPointsWorld.push_back(temp);
-        
         }
     }
     else {
@@ -105,4 +106,13 @@ void Frame::cameraToWorld()
     }
    // return T.inverse() *hitPointsCamera;
 
+}
+
+void Frame::flashFrame()
+{
+    hitPointsCamera.clear();
+    hitPointsWorld.clear();
+    
+    vector<Point3f>(hitPointsCamera).swap(hitPointsCamera);
+    vector<Point3f>(hitPointsWorld).swap(hitPointsWorld);
 }

@@ -154,7 +154,7 @@ void Uav_trajplannimg::fly_init()
 	   ros::spinOnce();
 	   des_coordinate_=des_coordinate;
    }
-   while (TrajLibrarymain.LoadLibrary("/home/xxz/auto_flight/xxz_auto_flight/src/auto_flight/trajlib", 0)!=1)
+   while (TrajLibrarymain.LoadLibrary("src/auto_flight/trajlib", 0)!=1)
    {
 	    ros::spinOnce();
    }

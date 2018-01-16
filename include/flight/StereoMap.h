@@ -21,5 +21,6 @@ public:
     void RemoveOldPoints(ros::Time ros_time);
     void InsertPointsIntoOctree(vector<Point3f> hitPointsWorld);
     StereoMap();
+    void stereoMapStatus();
 
 };

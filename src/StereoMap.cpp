@@ -73,5 +73,13 @@ void StereoMap::InsertPointsIntoOctree(vector<Point3f> hitPointsWorld)
     else{
         cout << "hitPointsWorld is empty" <<endl;
     }
-    cout << "number of obstaclePoints :  " << current_cloud_->size()<<endl;
+
+    cout << "number of obstaclePoints in current cloud:  " << current_cloud_->size()<<endl;
+    cout << "number of obstaclePoints in building cloud:  " << building_cloud_->size()<<endl;
+
+}
+
+void StereoMap::stereoMapStatus()
+{
+
 }

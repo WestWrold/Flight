@@ -17,26 +17,43 @@ TrajectoryLibrary::TrajectoryLibrary(double ground_safety_distance, int  this_tr
 
 bool TrajectoryLibrary::LoadLibrary(std::string dirname, bool quiet) {
 	// if dirname does not end in "/", add a "/"
+	
+	
 	if (dirname.back() != '/')       //轨迹库磁盘路径
 	{
 		dirname.append("/");
 	}
+	
 
 
 	// open the directory and find all the files that end in .csv
-	DIR *dirp = opendir(dirname.c_str());
+	DIR *dirp = NULL;
+	dirp = opendir(dirname.c_str());
 	struct dirent *dp;
 
-	if (dirp == nullptr) {
+
+/*
+
+		while (dp = readdir(dirp))  
+{  
+    std::cout<<dp->d_name<<std::endl; 
+    //printf("%s\\n", entry->d_name); 
+}  
+   return false;
+   */
+
+	if (!dirp) {
 		std::cerr << "ERROR: no such directory: " << dirname << std::endl;
 		return false;
 	}
+
+
 
 	std::vector<Trajectory> temp_traj;
 
 	int count = 0;
 
-	while ((dp = readdir(dirp)) != NULL) {
+	while (dp = readdir(dirp)) {
 		std::string this_file = dp->d_name;
 
 		if (this_file.length() > 4 && this_file.compare(this_file.length() - 6, 6, "-x.csv") == 0) {       //有时间看看这个函数是怎么定义的
@@ -83,7 +100,7 @@ bool TrajectoryLibrary::LoadLibrary(std::string dirname, bool quiet) {
 bool TrajectoryLibrary::set_desstraight_traj(geometry_msgs::PoseStamped des_,const uavTrans &start_p)
 {
 	//Trajectory this_traj;
-	int num_of_points=10;
+	int num_of_points=12;
 	Eigen::MatrixXd ep_matrix;
 	double s_time=0.0;
     uavTrans trans_xyz_yaw;
@@ -125,12 +142,12 @@ bool TrajectoryLibrary::set_desstraight_traj(geometry_msgs::PoseStamped des_,con
 	{
 			ep_matrix(p_i,0)=s_time;
 			s_time+=0.01;
-			ep_matrix(p_i,1)=ep_vec[0]*s_time*25;
-			ep_matrix(p_i,2)=ep_vec[1]*s_time*25;
-			ep_matrix(p_i,3)=ep_vec[2]*s_time*25+0.12;
+			ep_matrix(p_i,1)=ep_vec[0]*s_time*50;
+			ep_matrix(p_i,2)=ep_vec[1]*s_time*50;
+			ep_matrix(p_i,3)=ep_vec[2]*s_time*50+0.12;
 			if (p_i==6)
 			{
-				ep_matrix(p_i,3)=ep_vec[2]*s_time*25+0.06;
+				ep_matrix(p_i,3)=ep_vec[2]*s_time*50+0.06;
 			}
 			
 			//ep_matrix(p_i,4)=0.0;
